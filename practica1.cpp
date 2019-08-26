@@ -25,7 +25,9 @@ int main()
              //cout<<alfabeto.find(posi)<<endl;
              cout<<posi<< "| ";
              cout << aleatorio << " "<<endl;
-             posi[i]=static_cast<str>(aleatorio);
+              cout << aleatorio << " "<<endl;
+             posi[i]=to_string(aleatorio);
+             cout<<posi[i-1]<<endl;
    }
    cout << endl;
 cout<<posi<<endl;
