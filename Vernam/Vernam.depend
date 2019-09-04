@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1567561072 source:c:\users\nicole\documents\algebra abstracta\vernam\main.cpp
+	<iostream>
+	<ctime>
+	<bitset>
+	<cstdlib>
+	<string>
+	<math.h>
+
