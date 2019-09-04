@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1567453891 source:c:\users\nicole\documents\algebra abstracta\cifrado1\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<string>
+
