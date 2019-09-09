@@ -7,12 +7,19 @@
 #include "Vernam.h"
 using namespace std;
 
+int mod(int t, int m) {
+  int mo = -1;
+  if (t < 0)
+	  return (t*mo >= m) ? (t - (t/m * m)) + m : t+ m;
+  return (t >= m) ? t - (t/m * m) : t;
+}
+
 Vernam::Vernam(int tam){
     this->tam=tam;
     srand(time(NULL));
     int i, aleatorio, DESDE=0, HASTA=alfabeto.length();
     for (i = 0; i < tam; i ++){
-        aleatorio = rand()%(HASTA-DESDE+1)+DESDE;
+        aleatorio = mod(rand(),(HASTA-DESDE+1)+DESDE);
         clave+=(alfabeto.at(aleatorio));
     }
     cout<< "clave "<<clave<<endl;
@@ -34,7 +41,7 @@ string  Vernam::cifrado(string mensaje){
         unsigned long pos =(xORTemp.to_ulong());
         while (pos>alfabeto.length()){
             //if(pos>alfabeto.length()){
-            pos = pos%alfabeto.length();
+            pos = mod(pos,alfabeto.length());
             //}
         }
         cifrado+=alfabeto.at(pos);
@@ -64,7 +71,7 @@ string  Vernam::descifrado(string mensaje ){
         // bool b=0;
         while (pos>alfabeto.length()){
             //if (pos>alfabeto.length()){
-            pos = pos%alfabeto.length() ;
+            pos = mod(pos,alfabeto.length() );
             // }
         }
         descifrado+=alfabeto.at(pos);
