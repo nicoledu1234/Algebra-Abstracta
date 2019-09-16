@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1568611836 source:c:\users\nicole\documents\algebra abstracta\enigma\main.cpp
+	<iostream>
+	<string>
+	"Enigma.h"
+
+1568611390 c:\users\nicole\documents\algebra abstracta\enigma\include\enigma.h
+	<cstdlib>
+	<string>
+	<fstream>
+
+1568611593 source:c:\users\nicole\documents\algebra abstracta\enigma\src\enigma.cpp
+	"Enigma.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<string>
+	<fstream>
+
