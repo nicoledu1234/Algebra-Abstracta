@@ -3,11 +3,6 @@
 #include <iostream>
 using namespace std;
 
-Escitala::Escitala(int filas, int columnas, int tam){
-    this-> filas=filas;
-    this-> columnas=columnas;
-    this-> tam=tam;
-}
 Escitala::Escitala(int filas, int columnas){
     this-> filas=filas;
     this-> columnas=columnas;
