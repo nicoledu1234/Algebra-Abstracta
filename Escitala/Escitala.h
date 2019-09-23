@@ -11,7 +11,6 @@ class Escitala
         int columnas;
     public:
         int tam;
-        Escitala(int filas, int columnas, int tam);
         Escitala(int filas, int columnas);
         string cifrado(string mensaje);
         string descifrado(string mensaje);
@@ -19,3 +18,4 @@ class Escitala
 };
 
 #endif // ESCITALA_H
+
