@@ -1,29 +1,40 @@
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <string>
+#include <fstream>
 #include "Vigenere.h"
 using namespace std;
 
 int main()
 {
-/*
-   cout<<"Ingresar las letras por teclado"<<endl;
-   string mensaje;
-    getline(cin,mensaje);
-    Vigenere a(mensaje.length());
-    a.cifrado(mensaje);
 
-*/
+    ifstream entrada ("textoPlano.txt");
+    ofstream salida ("textoCifrado.txt");
+    string mensaje;
+    while (getline (entrada,mensaje)) {
+    }
+    int tam=mensaje.length();
 
-     cout<<"Ingresar el texto cifrado"<<endl;
-     string men;
-     string k;
-    getline(cin,men);
+    Vigenere a(tam);
+    string cifrado= a.cifrado(mensaje);
+
+    salida << cifrado << endl;
+    salida.close();
+    entrada.close();
+
+
     cout<<"Ingresar la clave"<<endl;
+    string k;
     getline(cin,k);
     Vigenere b(k);
-    b.descifrado(men);
+
+    ifstream entrada1 ("textoCifrado.txt");
+    ofstream salida1 ("textoDescifrado.txt");
+    string mensaje1;
+    while (getline (entrada1,mensaje1)) {
+    }
+    string descifrado=b.descifrado(cifrado);
+    salida1 << descifrado << endl;
+    cout<<descifrado<<endl;
+    salida1.close();
+    entrada1.close();
 
     return 0;
 }
