@@ -22,3 +22,4 @@ class Vigenere
 };
 
 #endif // VIGENERE_H
+ 
