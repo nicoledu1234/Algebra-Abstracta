@@ -4,23 +4,31 @@
 #include <cstdlib>
 #include <string>
 #include <math.h>
+#include <fstream>
 #include "Vernam.h"
 using namespace std;
 //#define n 32
 
 
 int main(){
+    ifstream entrada ("textoPlano.txt");
+    ofstream salida ("textoDescifrado.txt");
     string mensaje;
-    cout<<"Ingresar las letras por teclado"<<endl;
-    cin>>mensaje;
+    while (getline (entrada,mensaje)) {
+    }
     int tama=mensaje.length();
-
     Vernam emisor(tama);
-    emisor.cifrado(mensaje);
+    vector<string> mensaje1=emisor.cifrado(mensaje);
+    cout<<"Ingresar la clave por teclado"<<endl;
+    string k;
+    cin>>k;
+    Vernam receptor(k);
+      cout<<receptor.descifrado(mensaje1);
+    salida << receptor.descifrado(mensaje1) << endl;
+    salida.close();
+    entrada.close();
 
-    /*Vernam receptor(bo6t);
-    receptor.descifrado(mensaje);
-    */
+
 
     return 0;
 }
