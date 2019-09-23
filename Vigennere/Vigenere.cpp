@@ -50,10 +50,12 @@ string Vigenere::descifrado(string mensaje){
         }
         mensaje.at(i)=alfabeto.at(restaT);
     }
-    cout<<"mensaje "<<mensaje<<endl;
     return mensaje;
+    cout<<"mensaje "<<mensaje<<endl;
+
 }
 Vigenere::~Vigenere()
 {
     //dtor
 }
+
