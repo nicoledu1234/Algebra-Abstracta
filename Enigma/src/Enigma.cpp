@@ -24,7 +24,7 @@ Enigma::Enigma(string clave)
     string alfabetoAleatorio1;
     string alfabetoAleatorio2;
     srand(time(NULL));
-    int i, aleatorio,aleatorio1,aleatorio2, DESDE=0, HASTA=alf.length();
+    int i, aleatorio,aleatorio1,aleatorio2, DESDE=0, HASTA=alf.length()-1;
     for (i = 0; i < alf.length(); i ++){
         aleatorio = mod(rand(),(HASTA-DESDE)+DESDE);
         alf+=alf.at(aleatorio);
@@ -43,54 +43,60 @@ Enigma::Enigma(string clave)
      r1Rojo=alfabetoAleatorio;
      r2Rojo=alfabetoAleatorio1;
      r3Rojo=alfabetoAleatorio2;
-     cout<<r1Rojo<<endl;
-     cout<<r2Rojo<<endl;
-     cout<<r3Rojo<<endl;
+     cout<<"r1Rojo  "<<r1Rojo<<endl;
+     cout<<"r2Rojo  "<<r2Rojo<<endl;
+     cout<<"r3Rojo  "<<r3Rojo<<endl;
 
 
-     r1Azul+=r1Azul.substr(0,r1Azul.find(clave.at(0)));
-    r1Azul.erase(0,r1Azul.find(clave.at(0)));
+     r1Azul+=r1Azul.substr(0,r1Azul.find(clave.at(2)));
+    r1Azul.erase(0,r1Azul.find(clave.at(2)));
 
-    cout<<r1Azul<<endl;
+    cout<<"r1Azul  "<<r1Azul<<endl;
 
 
     r2Azul+=r2Azul.substr(0,r2Azul.find(clave.at(1)));
     r2Azul.erase(0,r2Azul.find(clave.at(1)));
 
-    cout<<r2Azul<<endl;
+    cout<<"r2Azul  "<<r2Azul<<endl;
 
-    r3Azul+=r3Azul.substr(0,r3Azul.find(clave.at(2)));
-    r3Azul.erase(0,r3Azul.find(clave.at(2)));
+    r3Azul+=r3Azul.substr(0,r3Azul.find(clave.at(0)));
+    r3Azul.erase(0,r3Azul.find(clave.at(0)));
 
-    cout<<r3Azul<<endl;
+    cout<<"r3Azul  "<<r3Azul<<endl;
 
 }
 
 Enigma::Enigma(string clave,string r1Rojo,string r2Rojo,string r3Rojo)
 {
-    this->r1Rojo=r1Rojo;
-    this->r2Rojo=r2Rojo;
-    this->r3Rojo=r3Rojo;
-     r1Azul+=r1Azul.substr(0,r1Azul.find(clave.at(0)));
-    r1Azul.erase(0,r1Azul.find(clave.at(0)));
+    this->r1Rojo+=r1Rojo;
+    this->r2Rojo+=r2Rojo;
+    this->r3Rojo+=r3Rojo;
 
-    cout<<r1Azul<<endl;
+
+    cout<<"r1Rojo  "<<r1Rojo<<endl;
+     cout<<"r2Rojo  "<<r2Rojo<<endl;
+     cout<<"r3Rojo  "<<r3Rojo<<endl;
+
+
+     r1Azul+=r1Azul.substr(0,r1Azul.find(clave.at(2)));
+    r1Azul.erase(0,r1Azul.find(clave.at(2)));
+
+    cout<<"r1Azul  "<<r1Azul<<endl;
 
 
     r2Azul+=r2Azul.substr(0,r2Azul.find(clave.at(1)));
     r2Azul.erase(0,r2Azul.find(clave.at(1)));
 
-    cout<<r2Azul<<endl;
+    cout<<"r2Azul  "<<r2Azul<<endl;
 
-    r3Azul+=r3Azul.substr(0,r3Azul.find(clave.at(2)));
-    r3Azul.erase(0,r3Azul.find(clave.at(2)));
+    r3Azul+=r3Azul.substr(0,r3Azul.find(clave.at(0)));
+    r3Azul.erase(0,r3Azul.find(clave.at(0)));
 
-    cout<<r3Azul<<endl;
-
+    cout<<"r3Azul  "<<r3Azul<<endl;
 }
 string  Enigma::cifrado(string mensaje){
     string cifrado;
-        for(int i=0;mensaje.length();i++){
+        for(int i=0; i<mensaje.length();i++){
         cifrado+=r3Rojo.at(r3Azul.find(r2Rojo.at(r2Azul.find(r1Rojo.at(r1Azul.find(mensaje.at(i)))))));
   /*      cout<<endl;
         cout<<r1Azul<<endl;
@@ -108,19 +114,19 @@ string  Enigma::cifrado(string mensaje){
         cout<<r3Rojo.at(r3Azul.find(r2Rojo.at(r2Azul.find(r1Rojo.at(r1Azul.find(mensaje.at(i)))))))<<endl;
         cout<<endl;
 */
-        if(i<4){
+        if((i>5)&&(i<9)){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
             //cout<<"1-4"<<endl;
         }
-        if((i<8)&&(i>4)){
+        if((i<13)&&(i>9)){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
             r2Azul+=r2Azul.at(0);
             r1Azul.erase(0,1);
             //cout<<"4-8"<<endl;
         }
-        if(i>8){
+        if(i>13){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
             r2Azul+=r2Azul.at(0);
@@ -128,17 +134,14 @@ string  Enigma::cifrado(string mensaje){
             r2Azul+=r2Azul.at(0);
             r2Azul.erase(0,1);
         }
-        //cout<<cifrado<<endl;
+        cout<<cifrado<<endl;
     }
-    cout<<endl;
-    cout<<endl;
-    cout<<cifrado<<endl;
     return cifrado;
 }
 
 string  Enigma::descifrado(string mensaje){
     string descifrado;
-        for(int i=0;mensaje.length();i++){
+        for(int i=0;i<mensaje.length();i++){
         descifrado+=r1Azul.at(r1Rojo.find(r2Azul.at(r2Rojo.find(r3Azul.at(r3Rojo.find(mensaje.at(i)))))));
         /*cout<<endl;
         cout<<r1Azul<<endl;
@@ -156,19 +159,19 @@ string  Enigma::descifrado(string mensaje){
         cout<<r3Rojo.at(r3Azul.find(r2Rojo.at(r2Azul.find(r1Rojo.at(r1Azul.find(mensaje.at(i)))))))<<endl;
         cout<<endl;
 */
-        if(i<4){
+        if((i>5)&&(i<9)){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
            // cout<<"1-4"<<endl;
         }
-        if((i<8)&&(i>4)){
+        if((i<13)&&(i>9)){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
             r2Azul+=r2Azul.at(0);
             r1Azul.erase(0,1);
             //cout<<"4-8"<<endl;
         }
-        if(i>8){
+        if(i>13){
             r1Azul+=r1Azul.at(0);
             r1Azul.erase(0,1);
             r2Azul+=r2Azul.at(0);
@@ -178,8 +181,6 @@ string  Enigma::descifrado(string mensaje){
         }
         cout<<descifrado<<endl;
     }
-    cout<<endl;
-    cout<<endl;
     cout<<descifrado<<endl;
     return descifrado;
 }
