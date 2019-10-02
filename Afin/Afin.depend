@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1569873865 source:c:\users\nicole\documents\algebra abstracta\afin\main.cpp
+	<iostream>
+	"Afin.h"
+	<iostream>
+	<fstream>
+	<vector>
+	<string>
+
+1569871686 source:c:\users\nicole\documents\algebra abstracta\afin\src\afin.cpp
+	"Afin.h"
+	"Formulas.h"
+	<iostream>
+	<vector>
+	<string>
+
+1569870950 c:\users\nicole\documents\algebra abstracta\afin\include\afin.h
+	<iostream>
+	<string>
+
+1569428598 source:c:\users\nicole\documents\algebra abstracta\afin\src\formulas.cpp
+
+1569857312 c:\users\nicole\documents\algebra abstracta\afin\include\formulas.h
+	<iostream>
+	<string>
+	<ctime>
+	<vector>
+	<cstdlib>
+
