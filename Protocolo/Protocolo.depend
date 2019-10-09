@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1570626344 source:c:\users\nicole\documents\ccomp ii\protocolo\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"CifradoSimetrico.h"
+
+1570572896 source:c:\users\nicole\documents\ccomp ii\protocolo\src\cifrado simetrico.cpp
+	"Cifrado Simetrico.h"
+
+1570572896 c:\users\nicole\documents\ccomp ii\protocolo\include\cifrado simetrico.h
+
+1570577944 source:c:\users\nicole\documents\ccomp ii\protocolo\src\formulas.cpp
+
+1570626433 source:c:\users\nicole\documents\ccomp ii\protocolo\src\enigma.cpp
+	"Enigma.h"
+	"Escitala.h"
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<string>
+	<fstream>
+
+1570593645 c:\users\nicole\documents\ccomp ii\protocolo\include\enigma.h
+	<fstream>
+
+1570574331 source:c:\users\nicole\documents\ccomp ii\protocolo\src\escitala.cpp
+	"Escitala.h"
+	<string>
+	<iostream>
+
+1570573174 c:\users\nicole\documents\ccomp ii\protocolo\include\escitala.h
+	<iostream>
+	<string>
+
+1570625922 source:c:\users\nicole\documents\ccomp ii\protocolo\src\cifradosimetrico.cpp
+	"CifradoSimetrico.h"
+	<fstream>
+	<string>
+	<iostream>
+
+1570625873 c:\users\nicole\documents\ccomp ii\protocolo\include\cifradosimetrico.h
+	"Enigma.h"
+	"Vigenere.h"
+	"Afin.h"
+	<fstream>
+
+1570579531 c:\users\nicole\documents\ccomp ii\protocolo\include\vigenere.h
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<string>
+	"Vigenere.h"
+
+1570626560 source:c:\users\nicole\documents\ccomp ii\protocolo\src\vigenere.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<string>
+	"Vigenere.h"
+
+1570578739 source:c:\users\nicole\documents\ccomp ii\protocolo\src\afin.cpp
+	"Afin.h"
+	"Formulas.h"
+	<iostream>
+	<vector>
+	<string>
+
+1570579601 c:\users\nicole\documents\ccomp ii\protocolo\include\afin.h
+	<iostream>
+	<string>
+
+1570626344 c:\users\nicole\documents\ccomp ii\protocolo\include\formulas.h
+	<iostream>
+	<string>
+	<ctime>
+	<vector>
+	<cstdlib>
+
