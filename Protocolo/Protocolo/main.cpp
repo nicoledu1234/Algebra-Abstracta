@@ -10,9 +10,19 @@ int main()
 {
 
     CifradoSimetrico ra;
-    ra.cifrado("En realidad, lo que el sistema controla es que Ud. ingrese dentro de los minutos de tolerancia permitidos. De ahi en adelante puede mantenerse en el sistema el tiempo que considere prudente para la toma de asistencia. Nicole Durand Zeballos codigo, 181-10-43088 Si un estudiante llego despues de haber tomado lista y Ud. se encuentra dentro de los minutos de tolerancia permitidos, puede ingresar nuevamente al sistema y eliminarlo de la lista de inasistentes.");
+    ra.cifrado("cifrado con el protocolo que funciona para todos al fin");
 
-   string r1Rojo;
+/*
+   Enigma a("ur4","29jdcegb1tqlm8 pkv7rsya5xfoh0n4u6i3zw",2,19);
+    cout<<a.cifrado("uvc7rowkjia42ma2yekp1iio2lel4wta2vq001oyqu4i")<<endl;
+    */
+
+/*    Afin a(5,19,8);
+    cout<<a.cifrado("0hzi9t3uc1t2bumxg1ff9ik2sw9 m9ff9md2skkmo660")<<endl;
+    */
+
+
+    string r1Rojo;
     string claveEnigma;
     int filas;
     int columnas;
@@ -21,11 +31,12 @@ int main()
     int b;
     string mensaje;
     int i=0;
-    ifstream entrada("textoCifrado.txt");
+    ifstream entrada("claves.txt");
     ofstream salida ("textoDesifrado.txt");
     string copia;
     while (getline(entrada,copia)){
-
+           /* cout<<i<<endl;
+            cout<<copia<<endl;*/
             if (i==0){
                 r1Rojo=copia;
             }
@@ -60,12 +71,9 @@ int main()
     cout<<"claveVigenere  "<<claveVigenere<<endl;
     cout<<"a  "<<a<<endl;
     cout<<"b  "<<b<<endl;
-    cout<<"mensaje        "<<mensaje<<endl;
+    cout<<"mensaje  "<<mensaje<<endl;
     CifradoSimetrico rb;
     string des=rb.descifrado(mensaje,r1Rojo,claveEnigma,filas,columnas,claveVigenere,a,b);
-
-
-
     cout<<"descifrado: "<<des<<endl;
     cout<<endl;
     salida<<des<<endl;

@@ -37,7 +37,7 @@ CifradoSimetrico::CifradoSimetrico(){
     salida<<a.r1Rojo<<endl;
     salida<<claveEnigma<<endl;
     salida<<2<<endl;
-    salida<<alfabetoTam/2<<endl;
+    salida<<alfabetoTam/2+1<<endl;
 
 }
 
@@ -46,15 +46,13 @@ string CifradoSimetrico::cifrado(string mensaje){
     Vigenere b(tamMsj);
     salida<<b.clave<<endl;
     string cifVigenere=b.cifrado(mensaje);
-   cout<<"cifrado vigenere  "<<cifVigenere<<endl;
-    Enigma a(claveEnigma,r1Rojo,2,alfabetoTam/2);
+  // cout<<"cifrado vigenere "<<cifVigenere<<endl;
+    Enigma a(claveEnigma,r1Rojo,2,19);
     string cifEnigma=a.cifrado(cifVigenere);
-    cout<<"cifrado enigma   "<<cifEnigma<<endl;
     Afin c;
     salida<<c.aleatorio<<endl;
     salida<<c.b<<endl;
     string cifAfin=c.cifrado(cifEnigma);
-    cout<<"cifrado afin     "<<cifAfin<<endl;
     salida<<cifAfin<<endl;
     salida.close();
     return cifAfin;
@@ -62,16 +60,11 @@ string CifradoSimetrico::cifrado(string mensaje){
 
 string CifradoSimetrico::descifrado(string mensaje,string r1Rojo,string claveEnigma,int filas,int columnas,string claveVigenere,int a,int b){
     Afin r(a,b);
-    cout<<"constructor afin"<<endl;
     string desAfin=r.descifrado(mensaje);
-    cout<<"desAfin      "<<desAfin<<endl;
     Enigma s(claveEnigma,r1Rojo,filas,columnas);
-    s.cifrado(mensaje);
     string desEnigma=s.descifrado(desAfin);
-    cout<<"desEnigma    "<<desEnigma<<endl;
     Vigenere t(claveVigenere);
     string desVigenere=t.descifrado(desEnigma);
-    cout<<"desVigenere  "<<desVigenere<<endl;
     return desVigenere;
 }
 CifradoSimetrico::~CifradoSimetrico()

@@ -9,11 +9,6 @@
 using namespace std;
 
 
-void swapStr(string a,string b){
-    string tmp=a;
-    a=b;
-    b=tmp;
-}
 int modu(int t, int m) {
   int mo = -1;
   if (t < 0)
@@ -41,50 +36,48 @@ Enigma::Enigma()
      cout<<endl;
 */
       r1Rojo=alfabetoAleatorio;
-     /*string t=r1Rojo;
-     r2Rojo=t[alfabetoTam-1];
-     r2Rojo+=t;
-     r2Rojo.pop_back();
+     string t=r1Rojo;
+     r2Rojo=t;
+     r2Rojo+=r2Rojo.at(0);
+     r2Rojo.erase(0,1);
      //cout<<"TAM ALLF  "<<alfabetoTam<<endl;
      Escitala generadorR2Rojo(2,(alfabetoTam+1)/2);
      r2Rojo=generadorR2Rojo.cifrado(r2Rojo);
-     r2Rojo.pop_back();
      /*cout<<"r2Azul:  "<<r2Azul<<endl;
      cout<<"r2Rojo:  "<<r2Rojo<<endl;
      cout<<endl;
-
-      string t1=r2Rojo;
+*/
+     string t1=r2Rojo;
      r3Rojo=t1;
      r3Rojo+=r3Rojo.substr(0,2);
      r3Rojo.erase(0,2);
      Escitala generadorR3Rojo(2,(alfabetoTam+1)/2);
-     r3Rojo=generadorR3Rojo.cifrado(r3Rojo);
-      r3Rojo.pop_back();
-*/
+     r3Rojo=generadorR2Rojo.cifrado(r3Rojo);
+
+
 }
 
 Enigma::Enigma(string clave,string r1Rojo,int filas,int columnas)
 {
     this->r1Rojo=r1Rojo;
-    cout<<"r1Rojo  "<<r1Rojo<<endl;
-   string t=r1Rojo;
-     r2Rojo=t[alfabetoTam-1];
-     r2Rojo+=t;
-     r2Rojo.pop_back();
-     //cout<<"TAM ALLF  "<<alfabetoTam<<endl;
-     Escitala generadorR2Rojo(filas,columnas);
+    //cout<<"r1Rojo  "<<r1Rojo<<endl;
+
+
+    string t=r1Rojo;
+     r2Rojo=t;
+     r2Rojo+=r2Rojo.at(0);
+     r2Rojo.erase(0,1);
+     Escitala generadorR2Rojo(2,(alfabetoTam+1)/2);
      r2Rojo=generadorR2Rojo.cifrado(r2Rojo);
-    cout<<"r2Rojo  "<<r2Rojo<<endl;
-    this->r2Rojo=r2Rojo;
+ //   cout<<"r2Rojo  "<<r2Rojo<<endl;
 
     string t1=r2Rojo;
      r3Rojo=t1;
      r3Rojo+=r3Rojo.substr(0,2);
      r3Rojo.erase(0,2);
-     Escitala generadorR3Rojo(filas,columnas);
+     Escitala generadorR3Rojo(2,(alfabetoTam+1)/2);
      r3Rojo=generadorR3Rojo.cifrado(r3Rojo);
-     this->r3Rojo=r3Rojo;
-    cout<<"r3Rojo  "<<r3Rojo<<endl;
+    // cout<<"r3Rojo  "<<r3Rojo<<endl;
 
       r1Azul+=r1Azul.substr(0,r1Azul.find(clave.at(0)));
     r1Azul.erase(0,r1Azul.find(clave.at(0)));
@@ -101,13 +94,38 @@ Enigma::Enigma(string clave,string r1Rojo,int filas,int columnas)
     r3Azul.erase(0,r3Azul.find(clave.at(2)));
 
 //   cout<<"r3Azul  "<<r3Azul<<endl;
+/*
+    cout<<endl;
 
-        cout<<r1Rojo<<endl;
-        cout<<r2Rojo<<endl;
-        cout<<r3Rojo<<endl;
-
+    //cout<<"r1Azul:  "<<r1Azul<<endl;
+    cout<<"r1Rojo  "<<r1Rojo<<endl;
+    cout<<endl;
+    //cout<<"r2Azul:  "<<r2Azul<<endl;
+     cout<<"r2Rojo  "<<r2Rojo<<endl;
+     cout<<endl;
+     //cout<<"r3Azul:  "<<r3Azul<<endl;
+     cout<<"r3Rojo  "<<r3Rojo<<endl;
+     cout<<endl;
+     */
+     this->r2Rojo=r2Rojo;
+     this->r3Rojo=r3Rojo;
+     /*    cout<<"r1Rojo  "<<r1Rojo<<endl;
+         cout<<"r2Rojo  "<<r2Rojo<<endl;
+     cout<<"r3Rojo  "<<r3Rojo<<endl;
+     cout<<endl;
+     cout<<"r1Azul  "<<r1Azul<<endl;
+         cout<<"r2Azul  "<<r2Azul<<endl;
+     cout<<"r3Azul  "<<r3Azul<<endl;
+*/
 }
 string  Enigma::cifrado(string mensaje){
+  /*  cout<<"r1Rojo  "<<r1Rojo<<endl;
+         cout<<"r2Rojo  "<<r2Rojo<<endl;
+     cout<<"r3Rojo  "<<r3Rojo<<endl;
+     cout<<endl;
+     cout<<"r1Azul  "<<r1Azul<<endl;
+         cout<<"r2Azul  "<<r2Azul<<endl;
+     cout<<"r3Azul  "<<r3Azul<<endl;*/
     string cifrado;
   //  cout<<"mensaje.length()     "<<mensaje.length()<<endl;
         for(int i=0; i< mensaje.length();i++){
@@ -168,10 +186,8 @@ string  Enigma::cifrado(string mensaje){
 
 string  Enigma::descifrado(string mensaje){
     string descifrado;
-     cout<<"mensaje.length()     "<<mensaje.length()<<endl;
-        for(int i=mensaje.length()-1;i>=0;i--){
-        descifrado+=r1Azul.at(r1Rojo.find(r2Azul.at(r2Rojo.find(r3Azul.at(r3Rojo.find(mensaje[i]))))));
-        // cout<<"i  "<<i<<"   "<<descifrado<<endl;
+        for(int i=0;i<mensaje.length();i++){
+
         /*cout<<endl;
         cout<<r1Azul<<endl;
         cout<<r1Rojo<<endl;
@@ -189,58 +205,40 @@ string  Enigma::descifrado(string mensaje){
         cout<<endl;
 */
          if((i>=4)&&(i<8)){
-            string t1=r1Azul;
-            r1Azul=r1Azul[alfabetoTam-1];
-            r1Azul+=t1;
-            r1Azul.pop_back();
-           // cout<<"4-8"<<endl;
-         /*     cout<<"r1Azul  "<<r1Azul<<endl;
+            r1Azul+=r1Azul.at(0);
+            r1Azul.erase(0,1);
+          /*  cout<<"4-8"<<endl;
+              cout<<"r1Azul  "<<r1Azul<<endl;
          cout<<endl;*/
         }
         if((i<12)&&(i>=8)){
-            string t1=r1Azul;
-            r1Azul=t1[alfabetoTam-1];
-            r1Azul+=t1;
-            r1Azul.pop_back();
-           // cout<<"r1Azul  "<<r1Azul<<endl;
-            string t2=r2Azul;
-            r2Azul=r2Azul[alfabetoTam-1];
-            r2Azul+=t2;
-            r2Azul.pop_back();
-        /*    cout<<"9-12"<<endl;
-            cout<<"r1Azul  "<<r1Azul<<endl;
-            cout<<"r2Azul  "<<r2Azul<<endl;
+            r1Azul+=r1Azul.at(0);
+            r1Azul.erase(0,1);
+            r2Azul+=r2Azul.at(0);
+            r2Azul.erase(0,1);
+         /*   cout<<"9-12"<<endl;
+              cout<<"r1Azul "<<r1Azul<<endl;
+         cout<<"r2Azul  "<<r2Azul<<endl;
          cout<<endl;
 */
         }
         if(i>=12){
-              string t1=r1Azul;
-            r1Azul=r1Azul[alfabetoTam-1];
-            r1Azul+=t1;
-            r1Azul.pop_back();
-            string t2=r2Azul;
-            r2Azul=r2Azul[alfabetoTam-1];
-            r2Azul+=t2;
-            r2Azul.pop_back();
-            string t3=r3Azul;
-            r3Azul=r3Azul[alfabetoTam-1];
-            r3Azul+=t3;
-            r3Azul.pop_back();
-        // cout<<"13--"<<endl;
-       /*      cout<<"r1Azul  "<<r1Azul<<endl;
+            r1Azul+=r1Azul.at(0);
+            r1Azul.erase(0,1);
+            r2Azul+=r2Azul.at(0);
+            r2Azul.erase(0,1);
+            r3Azul+=r3Azul.at(0);
+            r3Azul.erase(0,1);
+  /*          cout<<"13--"<<endl;
+              cout<<"r1Azul  "<<r1Azul<<endl;
          cout<<"r2Azul  "<<r2Azul<<endl;
      cout<<"r2Azul  "<<r2Azul<<endl;
-*/
+     */
         }
-
-
+        //cout<<descifrado<<endl;
+         descifrado+=r1Azul.at(r1Rojo.find(r2Azul.at(r2Rojo.find(r3Azul.at(r3Rojo.find(mensaje.at(i)))))));
     }
     //cout<<descifrado<<endl;
-    for(int i=0;i<mensaje.size()/2;i++){
-
-        swap(descifrado[i],descifrado[mensaje.size()-1-i]);
-     //   descifrado[mensaje.size()-1-i]=tmp;
-    }
     return descifrado;
 }
 Enigma::~Enigma()

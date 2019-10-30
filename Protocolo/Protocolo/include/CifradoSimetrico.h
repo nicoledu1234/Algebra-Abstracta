@@ -10,7 +10,7 @@ using namespace std;
 class CifradoSimetrico
 {
     public:
-        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ";
         int alfabetoTam=alfabeto.size();
         CifradoSimetrico();
         string cifrado(string mensaje);

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572410714 source:c:\users\nicole\documents\algebra abstracta\protocolo\main.cpp
+1572233222 source:c:\users\nicole\documents\algebra abstracta\protocolo\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -7,27 +7,27 @@
 	"Enigma.h"
 	"Afin.h"
 
-1572288857 c:\users\nicole\documents\algebra abstracta\protocolo\include\cifradosimetrico.h
+1572198681 c:\users\nicole\documents\algebra abstracta\protocolo\include\cifradosimetrico.h
 	"Enigma.h"
 	"Vigenere.h"
 	"Afin.h"
 	<fstream>
 
-1572289892 c:\users\nicole\documents\algebra abstracta\protocolo\include\enigma.h
+1572198447 c:\users\nicole\documents\algebra abstracta\protocolo\include\enigma.h
 	<fstream>
 
-1572288857 c:\users\nicole\documents\algebra abstracta\protocolo\include\vigenere.h
+1570579531 c:\users\nicole\documents\algebra abstracta\protocolo\include\vigenere.h
 	<iostream>
 	<ctime>
 	<cstdlib>
 	<string>
 	"Vigenere.h"
 
-1572290015 c:\users\nicole\documents\algebra abstracta\protocolo\include\afin.h
+1572198004 c:\users\nicole\documents\algebra abstracta\protocolo\include\afin.h
 	<iostream>
 	<string>
 
-1572235472 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\afin.cpp
+1572200495 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\afin.cpp
 	"Afin.h"
 	"Formulas.h"
 	<iostream>
@@ -42,7 +42,7 @@
 	"Vernam.h"
 	<cstdlib>
 
-1572288857 c:\users\nicole\documents\algebra abstracta\protocolo\include\vernam.h
+1571671541 c:\users\nicole\documents\algebra abstracta\protocolo\include\vernam.h
 	<iostream>
 	<ctime>
 	<iostream>
@@ -55,13 +55,13 @@
 	<cstring>
 	<stdlib.h>
 
-1572292013 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\cifradosimetrico.cpp
+1572233369 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\cifradosimetrico.cpp
 	"CifradoSimetrico.h"
 	<fstream>
 	<string>
 	<iostream>
 
-1572291923 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\enigma.cpp
+1572233075 source:c:\users\nicole\documents\algebra abstracta\protocolo\src\enigma.cpp
 	"Enigma.h"
 	"Escitala.h"
 	<ctime>

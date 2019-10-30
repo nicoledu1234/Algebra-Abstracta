@@ -7,14 +7,14 @@ using namespace std;
 class Enigma
 {
     public:
-        string r1Azul="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string r1Azul="abcdefghijklmnopqrstuvwxyz0123456789 ";
         string r1Rojo;
-        string r2Azul="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string r2Azul="abcdefghijklmnopqrstuvwxyz0123456789 ";
         string r2Rojo;
-        string r3Azul="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string r3Azul="abcdefghijklmnopqrstuvwxyz0123456789 ";
         string r3Rojo;
         string clave;
-        int alfabetoTam=r1Azul.size();
+        int alfabetoTam=r1Azul.length();
         Enigma();
         Enigma(string clave,string r1Rojo,int filas,int columnas);
         string cifrado(string mensaje);

@@ -11,7 +11,7 @@ class Afin
     public:
         int b;
         int aleatorio;
-        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ";
         int tam=alfabeto.size();
         Afin();
         Afin(int a, int b);

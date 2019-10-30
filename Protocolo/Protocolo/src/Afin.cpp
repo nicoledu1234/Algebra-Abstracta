@@ -43,8 +43,8 @@ string Afin::cifrado(string mensaje){
 
 string Afin::descifrado(string mensaje){
     string descifrado;
-    for(int i=0;i<mensaje.size();i++){
-        int r=alfabeto.find(mensaje[i]);
+    for(int i=0;i<mensaje.length();i++){
+        int r=alfabeto.find(mensaje.at(i));
         //cout<<r<<"    "<<mensaje.at(i)<<endl;
         descifrado+=alfabeto.at(mod(aleatorio*(r-b),tam));
         //cout<<(mod(aleatorio*(r-b),tam))<<endl;

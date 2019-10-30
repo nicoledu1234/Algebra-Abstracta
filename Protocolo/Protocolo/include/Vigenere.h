@@ -12,7 +12,7 @@ class Vigenere
     private:
 
     public:
-        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ.,-_(){}+";
+        string alfabeto="abcdefghijklmnopqrstuvwxyz0123456789 ";
         string clave;
         int tam;
         Vigenere(int tam);
