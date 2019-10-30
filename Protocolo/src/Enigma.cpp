@@ -169,8 +169,8 @@ string  Enigma::cifrado(string mensaje){
 string  Enigma::descifrado(string mensaje){
     string descifrado;
      cout<<"mensaje.length()     "<<mensaje.length()<<endl;
-        for(int i=mensaje.length()-1;i>=0;i--){
-        descifrado+=r1Azul.at(r1Rojo.find(r2Azul.at(r2Rojo.find(r3Azul.at(r3Rojo.find(mensaje[i]))))));
+    for(int i=mensaje.length()-1;i>=0;i--){
+descifrado+=r1Azul.at(r1Rojo.find(r2Azul.at(r2Rojo.find(r3Azul.at(r3Rojo.find(mensaje[i]))))));
         // cout<<"i  "<<i<<"   "<<descifrado<<endl;
         /*cout<<endl;
         cout<<r1Azul<<endl;
@@ -233,9 +233,9 @@ string  Enigma::descifrado(string mensaje){
 */
         }
 
-
     }
     //cout<<descifrado<<endl;
+
     for(int i=0;i<mensaje.size()/2;i++){
 
         swap(descifrado[i],descifrado[mensaje.size()-1-i]);
