@@ -63,10 +63,8 @@ ZZ modularExponentiation(ZZ a, ZZ e, ZZ n) {
 
 
 
-void generadorClaves(ZZ &p ,ZZ &q,int bits) {
-    p = GenPrime_ZZ(bits);
-    q = GenPrime_ZZ(bits);
-/*
+void generadorClaves(ZZ &p ,ZZ &q) {
+
 
 	int tam=10;
 	cout<<"tam "<< tam<<endl;
