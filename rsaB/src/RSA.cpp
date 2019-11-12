@@ -10,15 +10,12 @@ using namespace NTL;
 
 
 RSA::RSA(int bits) {
-  SetSeed( conv<ZZ>(time(NULL)) );
-
+ 
   p = 0;
   q = 0;
   while (p == q) {
-    /*p = RandomPrime_ZZ(bits);
-    q = RandomPrime_ZZ(bits);
-    */
-    generadorClaves(p,q,bits);
+ 
+    generadorClaves(p,q);
   }
   n = p * q;
   phiN = (p-1) * (q-1);
@@ -43,7 +40,7 @@ string RSA::encrypt(string text) {
   ZZ receiverE, receiverN;
   cin >> receiverE >> receiverN;
 
-  // Message to string of numbers
+  
   string ciphertext;
   for (unsigned short int i = 0; i < text.size(); i++) {
     unsigned short int num = alphabet.find(text[i])+2;
@@ -55,8 +52,7 @@ string RSA::encrypt(string text) {
     ciphertext += strNum;
   }
 
-  // vector blocks stores each block we get from ciphertext
-  // each block is mod-exponentiated before being pushed to the vector
+  
   vector<ZZ> blocks;
   unsigned int breakPoint = 0;
   stringstream nss;
@@ -85,7 +81,7 @@ string RSA::encrypt(string text) {
     blocks.push_back(modularExponentiation(block, receiverE, receiverN));
   }
 
-  // normalize blocks and store them in ciphertext
+ 
   ciphertext.clear();
   for (unsigned int i = 0; i < blocks.size(); i++) {
     stringstream ss;
@@ -98,7 +94,7 @@ string RSA::encrypt(string text) {
     ciphertext += strBlock;
   }
 
-  cout << "\nEl cifrado es: ";
+  cout << "El cifrado es: ";
   cout<<ciphertext<<endl;
   return ciphertext;
 }
@@ -116,13 +112,6 @@ string RSA::decrypt(string cipherNum) {
     blocks.push_back(chinese_theorem(block));
   }
 
-  // Debugging
-  // cout << "Blocks: ";
-  // for (int i = 0; i < blocks.size(); i++)
-  //   cout << blocks[i] << " ";
-  // cout << "\n\n";
-
-  // Normalize blocks and concatenate them into strRealNum
   string strRealNum;
   for (unsigned int i = 0; i < blocks.size(); i++) {
     stringstream ss;
@@ -134,7 +123,7 @@ string RSA::decrypt(string cipherNum) {
     strRealNum += strBlock;
   }
 
-  // Convert numbers in strRealNum to letters
+
   string text;
   for (unsigned int i = 0; i < strRealNum.size(); i+=2) {
     string strNum = strRealNum.substr(i,2);
