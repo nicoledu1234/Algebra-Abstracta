@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1573520733 source:c:\users\nicole\documents\algebra abstracta\rsab\main.cpp
+	<iostream>
+	<fstream>
+	"RSA.h"
+	<NTL/ZZ.h>
+
+1573519384 c:\users\nicole\documents\algebra abstracta\rsab\include\rsa.h
+	<NTL/ZZ.h>
+
+1573521633 source:c:\users\nicole\documents\algebra abstracta\rsab\src\rsa.cpp
+	"RSA.h"
+	<NTL/ZZ.h>
+	<time.h>
+	"Formulas.h"
+	<sstream>
+	<vector>
+
+1573521517 source:c:\users\nicole\documents\algebra abstracta\rsab\src\formulas.cpp
+
+1573521684 c:\users\nicole\documents\algebra abstracta\rsab\include\formulas.h
+	<string>
+	<ctime>
+	<vector>
+	<iostream>
+	<cstdlib>
+	"Vernam.h"
+	<NTL/ZZ.h>
+
+1573521723 c:\users\nicole\documents\algebra abstracta\rsab\include\vernam.h
+	<iostream>
+	<ctime>
+	<iostream>
+	<ctime>
+	<bitset>
+	<vector>
+	<cstdlib>
+	<string>
+	<math.h>
+	<cstring>
+	<stdlib.h>
+
+1573521684 source:c:\users\nicole\documents\algebra abstracta\rsab\src\vernam.cpp
+	<iostream>
+	<ctime>
+	<bitset>
+	<fstream>
+	<vector>
+	<cstdlib>
+	<string>
+	<math.h>
+	<cstring>
+	<stdlib.h>
+	"Vernam.h"
+
