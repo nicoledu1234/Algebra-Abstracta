@@ -145,18 +145,5 @@ ZZ RSA::chinese_theorem(ZZ cipherNum) {
   return mod( mod(Xq*pCq, n) + mod(Xp*qCp , n), n);
 }
 
-ZZ RSA::fast_exponentiation(ZZ a, ZZ b, ZZ c) {
-  ZZ total;
-  total = 1;
-  ZZ sqrValue = mod(a, n);
-  for(int i = 0; e > 0; i++, e /= 2) {
-    if ( mod(e, (ZZ)2) == (ZZ)1)
-      total = mod(total*sqrValue, n);
-
-    sqrValue = mod(sqrValue*sqrValue, n);
-  }
-
-  return total;
-
 }
 
