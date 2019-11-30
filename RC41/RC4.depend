@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1574107598 source:c:\users\nicole\documents\algebra abstracta\rc4\main.cpp
+	<iostream>
+	<fstream>
+	"RC4.h"
+	<NTL/ZZ.h>
+
+1574107562 source:c:\users\nicole\documents\algebra abstracta\rc4\src\rc4.cpp
+	"RC4.h"
+	<iostream>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+	<string>
+	<NTL/ZZ.h>
+
+1574107260 c:\users\nicole\documents\algebra abstracta\rc4\include\rc4.h
+	<iostream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
+
+1575155214 source:c:\users\nicole\documents\algebra abstracta\rc41\main.cpp
+	<iostream>
+	<fstream>
+	"RC4.h"
+	<NTL/ZZ.h>
+
+1575153521 c:\users\nicole\documents\algebra abstracta\rc41\include\rc4.h
+	<iostream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
+
+1575155368 source:c:\users\nicole\documents\algebra abstracta\rc41\src\rc4.cpp
+	"RC4.h"
+	<iostream>
+	<fstream>
+	<time.h>
+	<sstream>
+	<x86intrin.h>
+	<stdlib.h>
+	<string>
+	<NTL/ZZ.h>
+
