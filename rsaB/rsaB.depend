@@ -1,24 +1,25 @@
 # depslib dependency file v1.0
-1573520733 source:c:\users\nicole\documents\algebra abstracta\rsab\main.cpp
+1575041887 source:c:\users\nicole\documents\algebra abstracta\rsab\main.cpp
 	<iostream>
 	<fstream>
 	"RSA.h"
 	<NTL/ZZ.h>
 
-1573519384 c:\users\nicole\documents\algebra abstracta\rsab\include\rsa.h
+1574987755 c:\users\nicole\documents\algebra abstracta\rsab\include\rsa.h
 	<NTL/ZZ.h>
 
-1573521633 source:c:\users\nicole\documents\algebra abstracta\rsab\src\rsa.cpp
+1575043452 source:c:\users\nicole\documents\algebra abstracta\rsab\src\rsa.cpp
 	"RSA.h"
 	<NTL/ZZ.h>
 	<time.h>
+	<fstream>
 	"Formulas.h"
 	<sstream>
 	<vector>
 
 1573521517 source:c:\users\nicole\documents\algebra abstracta\rsab\src\formulas.cpp
 
-1573521684 c:\users\nicole\documents\algebra abstracta\rsab\include\formulas.h
+1574992881 c:\users\nicole\documents\algebra abstracta\rsab\include\formulas.h
 	<string>
 	<ctime>
 	<vector>
@@ -52,4 +53,21 @@
 	<cstring>
 	<stdlib.h>
 	"Vernam.h"
+
+1575157466 source:c:\users\nicole\documents\algebra abstracta\rsab\src\rc4.cpp
+	"RC4.h"
+	<iostream>
+	<fstream>
+	<time.h>
+	<sstream>
+	<x86intrin.h>
+	<stdlib.h>
+	<string>
+	<NTL/ZZ.h>
+
+1575157492 c:\users\nicole\documents\algebra abstracta\rsab\include\rc4.h
+	<iostream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
 

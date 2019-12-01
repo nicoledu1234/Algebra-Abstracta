@@ -3,7 +3,7 @@
 #include<vector>
 #include <iostream>
 #include <cstdlib>
-
+#include <sstream>
 #include "Vernam.h"
 #include <NTL/ZZ.h>
 using namespace std;
@@ -63,10 +63,68 @@ ZZ modularExponentiation(ZZ a, ZZ e, ZZ n) {
 
 
 
-void generadorClaves(ZZ &p ,ZZ &q) {
+ZZ string_a_zz(string message){
+     ZZ number(INIT_VAL, message.c_str());
+     return number;
+}
+string zz_a_string(const ZZ &z)
+{
+  std::stringstream buffer;
+  buffer << z;
+  return buffer.str();
+}
+
+inline ZZ convBitsToZZ(string bitsStr){
+  ZZ conversion;
+  for(int i = bitsStr.size(); i >= 0 ; i--)
+    if (bitsStr[i] == '1') conversion += power2_ZZ(i);
+
+  return conversion;
+}
+
+ZZ convertirBinaryToZZ(string binary)
+{
+	ZZ res;
+	ZZ base;
+	base = 2;
+	res = 0;
+	long exp = 0;
+	for (long i = binary.size() - 1; i >= 0; --i) {
+		if (binary[i] == '1') {
+			res += power(base, exp);
+		}
+		++exp;
+	}
+
+	return res;
+}
+bool fermatTest(int numTests, string pPrime) {
+	ZZ a;
+	string binario;
+   binario = pPrime;
+   ZZ pseudoPrime;
+   pseudoPrime= string_a_zz(pPrime);
+	if (pseudoPrime == 1)
+	{
+		return false;
+	}
+	for (int i = 0; i < numTests; i++)
+	{
 
 
-	int tam=10;
+		a = mod(convertirBinaryToZZ(binario), (pseudoPrime - conv<ZZ>(1)) + conv<ZZ>(1));
+		if (modularExponentiation(a, pseudoPrime - 1, pseudoPrime) != 1)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+void generadorClaves(ZZ &p ,ZZ &q,int bits) {
+   /* p = GenPrime_ZZ(bits);
+    q = GenPrime_ZZ(bits);
+    */
+	/*int tam=10;
 	cout<<"tam "<< tam<<endl;
 	Vernam gg(tam);
   //cout<<"tam "<< tam<<endl;

@@ -7,7 +7,7 @@ using namespace NTL;
 
 
 int main() {
-  RSA rsa(16);
+  RSA rsa (20);
   bool exit= false;
   while (!exit) {
     cout << "Que quiere hacer?"<<endl;
@@ -65,7 +65,6 @@ int main() {
 
     cout <<endl;
   }
-
-  return 0;
+  return 1;
 }
 

@@ -7,7 +7,7 @@ using namespace NTL;
 class RSA {
   private:
     ZZ e, n, p, q, phiN, d, dp, dq, qCp, pCq;
-    std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345679 ";
+    std::string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
   public:
     RSA(int);
     virtual ~RSA(){}
