@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1575075263 source:c:\users\nicole\documents\algebra abstracta\elgamal\main.cpp
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<ctime>
+	<Gamal.h>
+
+1575075130 c:\users\nicole\documents\algebra abstracta\elgamal\include\gamal.h
+	<iostream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
+
+1574642749 source:c:\users\nicole\documents\algebra abstracta\elgamal\src\formulas.cpp
+
+1575126015 source:c:\users\nicole\documents\algebra abstracta\elgamal\src\gamal.cpp
+	"Formulas.h"
+	"Gamal.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
+
+1575126000 c:\users\nicole\documents\algebra abstracta\elgamal\include\formulas.h
+	<string>
+	<ctime>
+	<vector>
+	<iostream>
+	<cstdlib>
+	<NTL/ZZ.h>
+
+1575155766 c:\users\nicole\documents\algebra abstracta\elgamal\include\rc4.h
+	<iostream>
+	<vector>
+	<string>
+	<NTL/ZZ.h>
+
+1575156887 source:c:\users\nicole\documents\algebra abstracta\elgamal\src\rc4.cpp
+	"RC4.h"
+	<iostream>
+	<fstream>
+	<time.h>
+	<sstream>
+	<x86intrin.h>
+	<stdlib.h>
+	<string>
+	<NTL/ZZ.h>
+
